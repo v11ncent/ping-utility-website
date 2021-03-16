@@ -1,2 +1,2 @@
-# ping-utility-website
-A website that tracks the results of the ping command
+# Background
+After so many problems with Comcast's internet, I've grown accustommed to always using the command `ping google.com -t`. This simple command ping's Google and shows if I'm experiencing any packetloss or high ping. I've had this idea for a while to have a nice gui that shows me a more data-representative way of this command's results. Since I just learned React, I decided why not tackle this project while learning how to set up a website with React.
