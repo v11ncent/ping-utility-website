@@ -9,20 +9,22 @@ function ping(callback) {
 
     // on data
     ping.stdout.on('data', (result) => {
+        let push;
         let str = result.toString();
         let msIndex = result.indexOf('time');
         if (msIndex > -1) {
-            data.push(str.substring(msIndex + 5, (msIndex + 5) + 4));
+            push = str.substring(msIndex + 5, (msIndex + 5) + 4);
+            if (data !== ' in ') data.push(push);
         } 
     });
-
+    
     // error
     ping.stderr.on('data', (data) => {
         console.error(data);
     });
 
     // close
-    ping.on('close', (data) => {
+    ping.on('close', () => {
         return callback(data);
     })
 }
